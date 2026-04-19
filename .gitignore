@@ -25,3 +25,9 @@ Thumbs.db
 
 ads.txt
 robots.txt
+
+backend/.env
+backend/uploads/
+*.pyc
+
+
