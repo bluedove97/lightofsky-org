@@ -1,13 +1,13 @@
 ### 1. 프론트 서버 실행
-node serve.mjs
+<code>node serve.mjs</code> --> localhost:3000
 
 ### 2. 가상환경 활성화
-python -m venv venv
+<code>python -m venv venv</code>
 
-source venv/scripts/activate (윈도우 .venv\Scripts\activate)
+<code>source venv/scripts/activate</code> (윈도우 .venv\Scripts\activate)
 
 ### 3. 패키지 설치
-pip install -r requirements.txt
+<code>pip install -r requirements.txt</code>
 
 ### 4. 백엔드 서버 실행
-uvicorn main:app --reload --port 8000
+<code>uvicorn main:app --reload --port 8000</code> --> localhost:8000
