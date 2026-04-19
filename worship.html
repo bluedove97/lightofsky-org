@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예배안내 — 하늘의 빛 교회</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sky: { brand: '#3D8EC9', light: '#6BAED6', pale: '#D0E9F7', deep: '#2B6E9E' }
+          },
+          fontFamily: { sans: ['Noto Sans KR', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Noto Sans KR', sans-serif; }
+    .nav-link { color: #374151; font-weight: 500; padding: 0.5rem 0.75rem; border-radius: 0.375rem; transition: color 0.15s, background 0.15s; }
+    .nav-link:hover { color: #3D8EC9; background: #D0E9F7; }
+    .nav-link.active { color: #3D8EC9; font-weight: 700; }
+    .card { background: white; border-radius: 1rem; box-shadow: 0 2px 8px rgba(61,142,201,0.1), 0 8px 32px rgba(0,0,0,0.06); }
+    .worship-card {
+      background: white; border-radius: 1rem; overflow: hidden;
+      box-shadow: 0 2px 8px rgba(61,142,201,0.12), 0 8px 32px rgba(0,0,0,0.07);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .worship-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(61,142,201,0.2); }
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="./brand_logo/logo.png" alt="하늘의 빛 교회 로고" class="h-10 w-auto object-contain">
+        <span class="text-xl font-black text-sky-brand tracking-tight">하늘의 빛 교회</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-1">
+        <a href="index.html"    class="nav-link">메인</a>
+        <a href="about.html"   class="nav-link">교회소개</a>
+        <a href="worship.html" class="nav-link active">예배안내</a>
+        <a href="board.html"   class="nav-link">게시판/앨범</a>
+      </nav>
+      <button id="menu-btn" class="md:hidden p-2 rounded-lg text-gray-500 hover:text-sky-brand hover:bg-sky-pale transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden bg-white border-t border-sky-pale px-4 pb-4">
+      <nav class="flex flex-col gap-1 pt-2">
+        <a href="index.html"    class="nav-link">메인</a>
+        <a href="about.html"   class="nav-link">교회소개</a>
+        <a href="worship.html" class="nav-link active">예배안내</a>
+        <a href="board.html"   class="nav-link">게시판/앨범</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="bg-gradient-to-r from-sky-deep to-sky-brand text-white py-16 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-blue-200 text-sm font-medium tracking-widest uppercase mb-3">Worship</p>
+      <h1 class="text-4xl sm:text-5xl font-black mb-4">예배 안내</h1>
+      <p class="text-blue-100 text-lg">하나님 앞에 함께 모여 예배드립니다</p>
+    </div>
+  </section>
+
+  <!-- Worship Schedule -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-sky-brand font-semibold text-sm tracking-widest uppercase mb-2">Schedule</p>
+        <h2 class="text-3xl font-black text-gray-800">예배 시간표</h2>
+      </div>
+
+      <!-- Main Worship -->
+      <h3 class="text-lg font-bold text-gray-700 mb-5 flex items-center gap-2">
+        <span class="w-1 h-6 bg-sky-brand rounded-full inline-block"></span>
+        주일 예배
+      </h3>
+      <div class="flex justify-center mb-12">
+        <div class="worship-card ring-2 ring-sky-brand w-full max-w-xs">
+          <div class="h-2 bg-sky-brand"></div>
+          <div class="p-6 text-center">
+            <p class="text-sky-brand font-bold text-sm mb-1">주일 예배</p>
+            <p class="text-4xl font-black text-gray-800 mb-1">11:00</p>
+            <p class="text-gray-500 text-sm">📍 본당 (4층)</p>
+            <div class="mt-4 pt-4 border-t border-gray-100 text-xs text-gray-400">매주 일요일 오전 11시</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Weekday Worship -->
+      <h3 class="text-lg font-bold text-gray-700 mb-5 flex items-center gap-2">
+        <span class="w-1 h-6 bg-sky-light rounded-full inline-block"></span>
+        주중 예배
+      </h3>
+      <div class="flex justify-center mb-12">
+        <div class="worship-card w-full max-w-xs">
+          <div class="h-2 bg-sky-light"></div>
+          <div class="p-6 text-center">
+            <p class="text-sky-light font-bold text-sm mb-1">수요 예배</p>
+            <p class="text-4xl font-black text-gray-800 mb-1">19:30</p>
+            <p class="text-gray-500 text-sm">📍 본당 (4층)</p>
+            <div class="mt-4 pt-4 border-t border-gray-100 text-xs text-gray-400">매주 수요일 저녁 7시 30분</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Department Worship -->
+      <h3 class="text-lg font-bold text-gray-700 mb-5 flex items-center gap-2">
+        <span class="w-1 h-6 bg-yellow-400 rounded-full inline-block"></span>
+        부서 예배
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl">
+        <div class="card p-5 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center text-2xl flex-shrink-0">🧒</div>
+          <div>
+            <p class="font-bold text-gray-800">예사랑</p>
+            <p class="text-sky-brand font-semibold">주일 11:00</p>
+            <p class="text-gray-400 text-xs">본당 (4층)</p>
+          </div>
+        </div>
+        <div class="card p-5 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-2xl flex-shrink-0">🧑</div>
+          <div>
+            <p class="font-bold text-gray-800">예사모</p>
+            <p class="text-sky-brand font-semibold">주일 11:00</p>
+            <p class="text-gray-400 text-xs">본당 (4층)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Staff -->
+  <section class="py-16 px-4 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-sky-brand font-semibold text-sm tracking-widest uppercase mb-2">Staff</p>
+        <h2 class="text-3xl font-black text-gray-800">목회자 소개</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+        <div class="card p-6 text-center">
+          <div class="w-14 h-14 rounded-2xl bg-sky-pale flex items-center justify-center mx-auto mb-4 text-3xl">✝️</div>
+          <p class="text-xs text-sky-brand font-bold uppercase tracking-widest mb-1">담임목사</p>
+          <p class="text-xl font-black text-gray-800">손정욱</p>
+        </div>
+        <div class="card p-6">
+          <div class="w-14 h-14 rounded-2xl bg-sky-pale flex items-center justify-center mx-auto mb-4 text-3xl">🙏</div>
+          <p class="text-xs text-sky-brand font-bold uppercase tracking-widest mb-2 text-center">장로</p>
+          <ul class="text-center space-y-1">
+            <li class="text-gray-700 font-semibold">김종복</li>
+            <li class="text-gray-700 font-semibold">정천재</li>
+            <li class="text-gray-700 font-semibold">장현수</li>
+          </ul>
+        </div>
+        <div class="card p-6 text-center sm:col-span-2 md:col-span-1">
+          <div class="w-14 h-14 rounded-2xl bg-sky-pale flex items-center justify-center mx-auto mb-4 text-3xl">🎵</div>
+          <p class="text-xs text-sky-brand font-bold uppercase tracking-widest mb-3">사역자</p>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-center justify-center gap-2 text-gray-700">
+              <span class="text-gray-400 text-xs">교육전도사</span>
+              <span class="font-semibold">채경빈</span>
+            </li>
+            <li class="flex items-center justify-center gap-2 text-gray-700">
+              <span class="text-gray-400 text-xs">찬양인도</span>
+              <span class="font-semibold">김경진</span>
+            </li>
+            <li class="flex items-center justify-center gap-2 text-gray-700">
+              <span class="text-gray-400 text-xs">반주</span>
+              <span class="font-semibold">정혜영</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Missions -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-sky-brand font-semibold text-sm tracking-widest uppercase mb-2">Mission</p>
+        <h2 class="text-3xl font-black text-gray-800">우리 교회가 섬기는 국내외 교회·선교기관</h2>
+      </div>
+      <div class="card overflow-hidden">
+        <div class="bg-sky-pale px-6 py-3 grid grid-cols-[1fr_auto] gap-4 text-xs font-bold text-gray-500 uppercase tracking-widest border-b border-sky-brand/10">
+          <span>선교사 / 기관</span>
+          <span class="text-right w-24">지역</span>
+        </div>
+        <div class="divide-y divide-gray-100">
+          <div class="px-6 py-3.5 grid grid-cols-[1fr_auto] gap-4 hover:bg-sky-pale/40 transition-colors">
+            <span class="font-medium text-gray-800">오기곤, 권소영 선교사</span>
+            <span class="text-sky-brand font-semibold text-sm text-right w-24">브라질</span>
+          </div>
+          <div class="px-6 py-3.5 grid grid-cols-[1fr_auto] gap-4 hover:bg-sky-pale/40 transition-colors">
+            <span class="font-medium text-gray-800">황병철, 박순미 선교사</span>
+            <span class="text-sky-brand font-semibold text-sm text-right w-24">엘살바도르</span>
+          </div>
+          <div class="px-6 py-3.5 grid grid-cols-[1fr_auto] gap-4 hover:bg-sky-pale/40 transition-colors">
+            <span class="font-medium text-gray-800">김태현, 이태연 선교사</span>
+            <span class="text-sky-brand font-semibold text-sm text-right w-24">탄자니아</span>
+          </div>
+          <div class="px-6 py-3.5 grid grid-cols-[1fr_auto] gap-4 hover:bg-sky-pale/40 transition-colors">
+            <span class="font-medium text-gray-800">정정섭, 양미진 선교사</span>
+            <span class="text-sky-brand font-semibold text-sm text-right w-24">필리핀</span>
+          </div>
+          <div class="px-6 py-3.5 grid grid-cols-[1fr_auto] gap-4 hover:bg-sky-pale/40 transition-colors">
+            <span class="font-medium text-gray-800">김영광, 최기쁨 선교사</span>
+            <span class="text-sky-brand font-semibold text-sm text-right w-24">키르기즈스탄</span>
+          </div>
+          <div class="px-6 py-3.5 grid grid-cols-[1fr_auto] gap-4 hover:bg-sky-pale/40 transition-colors">
+            <span class="font-medium text-gray-800">송영호, 김진희 선교사</span>
+            <span class="text-sky-brand font-semibold text-sm text-right w-24">이탈리아</span>
+          </div>
+          <div class="px-6 py-3.5 grid grid-cols-[1fr_auto] gap-4 hover:bg-sky-pale/40 transition-colors">
+            <span class="font-medium text-gray-800">박병덕, 최미희 선교사</span>
+            <span class="text-sky-brand font-semibold text-sm text-right w-24">우간다</span>
+          </div>
+          <div class="px-6 py-3.5 grid grid-cols-[1fr_auto] gap-4 hover:bg-sky-pale/40 transition-colors">
+            <span class="font-medium text-gray-800">안우리, 김나라 선교사</span>
+            <span class="text-sky-brand font-semibold text-sm text-right w-24">키르기즈스탄</span>
+          </div>
+          <div class="px-6 py-3.5 grid grid-cols-[1fr_auto] gap-4 hover:bg-sky-pale/40 transition-colors">
+            <span class="font-medium text-gray-800">황영규 선교사</span>
+            <span class="text-sky-brand font-semibold text-sm text-right w-24">필리핀</span>
+          </div>
+          <div class="px-6 py-3.5 grid grid-cols-[1fr_auto] gap-4 hover:bg-sky-pale/40 transition-colors bg-gray-50/60">
+            <span class="font-medium text-gray-800">아가페선교회</span>
+            <span class="text-sky-brand font-semibold text-sm text-right w-24">태국</span>
+          </div>
+          <div class="px-6 py-3.5 grid grid-cols-[1fr_auto] gap-4 hover:bg-sky-pale/40 transition-colors bg-gray-50/60">
+            <span class="font-medium text-gray-800">다온크리스천스쿨 <span class="text-gray-400 text-xs font-normal">(김복순 목사)</span></span>
+            <span class="w-24"></span>
+          </div>
+          <div class="px-6 py-3.5 grid grid-cols-[1fr_auto] gap-4 hover:bg-sky-pale/40 transition-colors bg-gray-50/60">
+            <span class="font-medium text-gray-800">SYM 선교회</span>
+            <span class="w-24"></span>
+          </div>
+          <div class="px-6 py-3.5 grid grid-cols-[1fr_auto] gap-4 hover:bg-sky-pale/40 transition-colors bg-gray-50/60">
+            <span class="font-medium text-gray-800">이성남 군선교사 <span class="text-gray-400 text-xs font-normal">(51사단 진격교회)</span></span>
+            <span class="w-24"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section id="location" class="py-16 px-4 bg-sky-pale">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-sky-brand font-semibold text-sm tracking-widest uppercase mb-2">Location</p>
+        <h2 class="text-3xl font-black text-gray-800">오시는 길</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <!-- Map placeholder -->
+        <div class="rounded-2xl overflow-hidden shadow-lg bg-white">
+          <img src="https://placehold.co/600x360/D0E9F7/3D8EC9?text=지도+로딩+중" alt="교회 위치 지도" class="w-full h-72 object-cover">
+          <div class="p-4 text-center">
+            <a href="https://map.kakao.com/link/search/경기도 안양시 동안구 관악대로 72 동화빌딩" target="_blank"
+               class="text-sky-brand text-sm font-medium hover:text-sky-deep transition-colors">
+              카카오맵에서 보기 →
+            </a>
+          </div>
+        </div>
+
+        <!-- Address Info -->
+        <div class="space-y-5">
+          <div class="card p-6">
+            <h3 class="font-bold text-gray-800 mb-4 flex items-center gap-2">
+              <span class="text-sky-brand">📍</span> 주소
+            </h3>
+            <p class="text-gray-700 font-medium">경기도 안양시 동안구 관악대로 72번지</p>
+            <p class="text-gray-500 text-sm mt-1">동화빌딩 4층, 5층</p>
+            <p class="text-gray-500 text-sm mt-0.5">(우편번호 13928)</p>
+          </div>
+          <div class="card p-6">
+            <h3 class="font-bold text-gray-800 mb-4 flex items-center gap-2">
+              <span class="text-sky-brand">📞</span> 연락처
+            </h3>
+            <p class="text-gray-700 font-medium">031-457-2691</p>
+            <p class="text-gray-500 text-sm mt-1">평일 09:00 ~ 17:00</p>
+          </div>
+          <div class="card p-6">
+            <h3 class="font-bold text-gray-800 mb-4 flex items-center gap-2">
+              <span class="text-sky-brand">🚇</span> 교통 안내
+            </h3>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-start gap-2">
+                <span class="font-bold text-sky-brand flex-shrink-0">지하철</span>
+                <span>1호선 관악역 2번 출구에서 도보 5분</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="font-bold text-sky-brand flex-shrink-0">버스</span>
+                <span>관악역 정류장 하차 후 도보 3분</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="font-bold text-sky-brand flex-shrink-0">주차</span>
+                <span>건물 내 주차 가능 (2시간 무료)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Visitor Info -->
+  <section class="py-14 px-4 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="card p-8 md:p-12 text-center bg-gradient-to-br from-sky-pale to-white">
+        <div class="w-16 h-16 rounded-2xl bg-sky-brand flex items-center justify-center mx-auto mb-5 text-3xl">🙏</div>
+        <h3 class="text-2xl font-black text-gray-800 mb-3">처음 오시는 분께</h3>
+        <p class="text-gray-600 leading-relaxed max-w-xl mx-auto mb-6">
+          처음 방문하시는 분들은 예배 후 안내 데스크에 들러주세요.<br>
+          새가족 안내와 함께 교회를 소개해 드리겠습니다.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="tel:031-457-2691"
+             class="inline-block bg-sky-brand text-white px-6 py-3 rounded-lg font-bold transition-all hover:bg-sky-deep hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-sky-brand">
+            📞 전화 문의
+          </a>
+          <a href="about.html"
+             class="inline-block border-2 border-sky-brand text-sky-brand px-6 py-3 rounded-lg font-bold transition-all hover:bg-sky-brand hover:text-white hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-sky-brand">
+            교회 소개 보기
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-10 px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-col md:flex-row gap-8 mb-8">
+        <div class="flex-1">
+          <div class="flex items-center gap-2 mb-3">
+            <img src="./brand_logo/logo.png" alt="로고" class="h-8 w-auto object-contain brightness-200">
+            <span class="text-white font-bold text-lg">하늘의 빛 교회</span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">상처받은 영혼들을 치유하고 성숙하게 하는<br>기쁨의 공동체</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3 text-sm">바로가기</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html"    class="hover:text-sky-light transition-colors">메인</a></li>
+            <li><a href="about.html"   class="hover:text-sky-light transition-colors">교회소개</a></li>
+            <li><a href="worship.html" class="hover:text-sky-light transition-colors">예배안내</a></li>
+            <li><a href="board.html"   class="hover:text-sky-light transition-colors">게시판/앨범</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3 text-sm">연락처</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li>📞 031-457-2691</li>
+            <li>📍 경기도 안양시 동안구<br>관악대로 72번지 동화빌딩 4F, 5F</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-6 text-center text-xs text-gray-500">
+        © 2024 하늘의 빛 교회. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menu-btn').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

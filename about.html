@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>교회소개 — 하늘의 빛 교회</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sky: { brand: '#3D8EC9', light: '#6BAED6', pale: '#D0E9F7', deep: '#2B6E9E' }
+          },
+          fontFamily: { sans: ['Noto Sans KR', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Noto Sans KR', sans-serif; }
+    .btn-primary {
+      background: #3D8EC9; color: white; padding: 0.75rem 2rem;
+      border-radius: 0.5rem; font-weight: 700; display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 14px rgba(61,142,201,0.35);
+    }
+    .btn-primary:hover  { background: #2B6E9E; transform: scale(1.02); }
+    .btn-primary:focus  { outline: none; box-shadow: 0 0 0 3px rgba(61,142,201,0.4); }
+    .btn-primary:active { transform: scale(0.98); }
+    .nav-link { color: #374151; font-weight: 500; padding: 0.5rem 0.75rem; border-radius: 0.375rem; transition: color 0.15s, background 0.15s; }
+    .nav-link:hover { color: #3D8EC9; background: #D0E9F7; }
+    .nav-link.active { color: #3D8EC9; font-weight: 700; }
+    .card { background: white; border-radius: 1rem; box-shadow: 0 2px 8px rgba(61,142,201,0.1), 0 8px 32px rgba(0,0,0,0.06); }
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="./brand_logo/logo.png" alt="하늘의 빛 교회 로고" class="h-10 w-auto object-contain">
+        <span class="text-xl font-black text-sky-brand tracking-tight">하늘의 빛 교회</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-1">
+        <a href="index.html"    class="nav-link">메인</a>
+        <a href="about.html"   class="nav-link active">교회소개</a>
+        <a href="worship.html" class="nav-link">예배안내</a>
+        <a href="board.html"   class="nav-link">게시판/앨범</a>
+      </nav>
+      <button id="menu-btn" class="md:hidden p-2 rounded-lg text-gray-500 hover:text-sky-brand hover:bg-sky-pale transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden bg-white border-t border-sky-pale px-4 pb-4">
+      <nav class="flex flex-col gap-1 pt-2">
+        <a href="index.html"    class="nav-link">메인</a>
+        <a href="about.html"   class="nav-link active">교회소개</a>
+        <a href="worship.html" class="nav-link">예배안내</a>
+        <a href="board.html"   class="nav-link">게시판/앨범</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="bg-gradient-to-r from-sky-deep to-sky-brand text-white py-16 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-blue-200 text-sm font-medium tracking-widest uppercase mb-3">About Us</p>
+      <h1 class="text-4xl sm:text-5xl font-black mb-4">교회 소개</h1>
+      <p class="text-blue-100 text-lg">하늘의 빛 교회는 어떤 곳인가요?</p>
+    </div>
+  </section>
+
+  <!-- Vision & Mission -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-sky-brand font-semibold text-sm tracking-widest uppercase mb-2">Our Mission</p>
+        <h2 class="text-3xl font-black text-gray-800 mb-4">교회의 사명</h2>
+        <p class="text-gray-500 max-w-xl mx-auto">저희 교회가 추구하는 핵심 가치와 비전입니다</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card p-8 text-center">
+          <div class="w-16 h-16 rounded-2xl bg-sky-pale flex items-center justify-center mx-auto mb-5">
+            <svg class="w-8 h-8 text-sky-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-xl text-gray-800 mb-3">치유</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">상처받은 영혼들을 하나님의 사랑으로 치유하고, 회복의 길로 인도합니다.</p>
+        </div>
+        <div class="card p-8 text-center border-2 border-sky-brand">
+          <div class="w-16 h-16 rounded-2xl bg-sky-brand flex items-center justify-center mx-auto mb-5">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-xl text-gray-800 mb-3">성숙</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">말씀과 기도를 통해 영적으로 성숙한 그리스도인으로 성장할 수 있도록 돕습니다.</p>
+        </div>
+        <div class="card p-8 text-center">
+          <div class="w-16 h-16 rounded-2xl bg-sky-pale flex items-center justify-center mx-auto mb-5">
+            <svg class="w-8 h-8 text-sky-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-xl text-gray-800 mb-3">공동체</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">하나님의 임재 안에서 함께 기쁨을 나누는 따뜻한 가족 공동체를 이루어 갑니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision Statement -->
+  <section class="py-16 px-4 bg-sky-pale">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sky-brand font-semibold text-sm tracking-widest uppercase mb-3">Vision</p>
+      <h2 class="text-3xl font-black text-gray-800 mb-6">비전</h2>
+      <blockquote class="text-2xl sm:text-3xl font-bold text-sky-deep leading-relaxed mb-6">
+        "하나님의 임재와 은혜에 중심을 두고,<br>
+        기쁨으로 함께하는 공동체"
+      </blockquote>
+      <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+        저희 교회는 예배와 말씀, 기도를 통해 하나님의 임재를 경험하고,
+        그 은혜 가운데 서로 사랑하며 세상에 빛을 비추는 교회가 되기를 소망합니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pastor Introduction -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-sky-brand font-semibold text-sm tracking-widest uppercase mb-2">Our Pastor</p>
+        <h2 class="text-3xl font-black text-gray-800">담임목사 소개</h2>
+      </div>
+      <div class="card p-8 md:p-12 flex flex-col md:flex-row gap-10 items-start">
+        <div class="flex-shrink-0 text-center">
+          <img src="https://placehold.co/240x280/3D8EC9/ffffff?text=담임목사" alt="담임목사 사진" class="rounded-2xl w-52 h-60 object-cover mx-auto mb-4 shadow-md">
+          <p class="font-bold text-gray-800 text-lg">담임목사</p>
+          <p class="text-sky-brand font-semibold">하늘의 빛 교회</p>
+        </div>
+        <div class="flex-1">
+          <h3 class="text-2xl font-black text-gray-800 mb-2">담임목사 인사말</h3>
+          <div class="w-12 h-1 bg-sky-brand rounded mb-6"></div>
+          <p class="text-gray-600 leading-loose mb-4">
+            하늘의 빛 교회에 오신 것을 진심으로 환영합니다.
+          </p>
+          <p class="text-gray-600 leading-loose mb-4">
+            저희 교회는 이 땅의 상처받고 지친 영혼들을 하나님의 사랑으로 치유하고,
+            그분의 은혜 안에서 새 힘을 얻어 성숙한 그리스도인으로 세워지는 것을 사명으로 합니다.
+          </p>
+          <p class="text-gray-600 leading-loose mb-4">
+            예배와 말씀, 기도와 교제를 통해 하나님의 임재를 깊이 경험하고,
+            서로 사랑하며 세상을 향해 빛과 소금이 되는 교회가 되길 소망합니다.
+          </p>
+          <p class="text-gray-600 leading-loose">
+            누구든지 부담 없이 오셔서 하나님의 사랑과 은혜를 경험하시길 바랍니다.
+            문은 언제나 열려 있습니다.
+          </p>
+          <div class="mt-6 pt-6 border-t border-gray-100">
+            <p class="text-sm text-gray-400">학력 및 경력</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 총신대학교 신학대학원 졸업 (M.Div.)</li>
+              <li>• 하늘의 빛 교회 담임목사 시무</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- History -->
+  <section class="py-16 px-4 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-sky-brand font-semibold text-sm tracking-widest uppercase mb-2">History</p>
+        <h2 class="text-3xl font-black text-gray-800">교회 역사</h2>
+      </div>
+      <div class="relative">
+        <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-sky-pale"></div>
+        <div class="space-y-8">
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-sky-brand text-white flex items-center justify-center font-bold text-sm z-10">창립</div>
+            <div class="card p-5 flex-1">
+              <p class="font-bold text-gray-800">교회 창립</p>
+              <p class="text-gray-500 text-sm mt-1">하늘의 빛 교회가 경기도 안양에서 설립되었습니다.</p>
+            </div>
+          </div>
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-sky-light text-white flex items-center justify-center font-bold text-sm z-10">성장</div>
+            <div class="card p-5 flex-1">
+              <p class="font-bold text-gray-800">성전 이전 및 확장</p>
+              <p class="text-gray-500 text-sm mt-1">동화빌딩 4F, 5F로 이전하며 더 넓은 예배 공간을 마련하였습니다.</p>
+            </div>
+          </div>
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-sky-deep text-white flex items-center justify-center font-bold text-sm z-10">현재</div>
+            <div class="card p-5 flex-1">
+              <p class="font-bold text-gray-800">지속적인 성장과 부흥</p>
+              <p class="text-gray-500 text-sm mt-1">다양한 부서와 사역을 통해 지역사회와 함께 성장해 나가고 있습니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-sky-brand text-white py-14 px-4 text-center">
+    <h3 class="text-2xl font-black mb-3">처음 오시나요?</h3>
+    <p class="text-blue-100 mb-6">예배 시간과 장소를 확인하고 편안하게 방문하세요</p>
+    <a href="worship.html" class="btn-primary bg-white !text-sky-brand hover:bg-blue-50 inline-block">예배 안내 보기</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-10 px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-col md:flex-row gap-8 mb-8">
+        <div class="flex-1">
+          <div class="flex items-center gap-2 mb-3">
+            <img src="./brand_logo/logo.png" alt="로고" class="h-8 w-auto object-contain brightness-200">
+            <span class="text-white font-bold text-lg">하늘의 빛 교회</span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">상처받은 영혼들을 치유하고 성숙하게 하는<br>기쁨의 공동체</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3 text-sm">바로가기</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html"    class="hover:text-sky-light transition-colors">메인</a></li>
+            <li><a href="about.html"   class="hover:text-sky-light transition-colors">교회소개</a></li>
+            <li><a href="worship.html" class="hover:text-sky-light transition-colors">예배안내</a></li>
+            <li><a href="board.html"   class="hover:text-sky-light transition-colors">게시판/앨범</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3 text-sm">연락처</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li>📞 031-457-2691</li>
+            <li>📍 경기도 안양시 동안구<br>관악대로 72번지 동화빌딩 4F, 5F</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-6 text-center text-xs text-gray-500">
+        © 2024 하늘의 빛 교회. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menu-btn').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>하늘의 빛 교회</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sky: {
+              brand: '#3D8EC9',
+              light: '#6BAED6',
+              pale:  '#D0E9F7',
+              deep:  '#2B6E9E',
+            }
+          },
+          fontFamily: {
+            sans: ['Noto Sans KR', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Noto Sans KR', sans-serif; }
+
+    .btn-primary {
+      background: #3D8EC9;
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s, opacity 0.2s;
+      box-shadow: 0 4px 14px rgba(61,142,201,0.35);
+    }
+    .btn-primary:hover  { background: #2B6E9E; transform: scale(1.02); }
+    .btn-primary:focus  { outline: none; box-shadow: 0 0 0 3px rgba(61,142,201,0.4); }
+    .btn-primary:active { transform: scale(0.98); }
+    .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .btn-outline {
+      border: 2px solid #3D8EC9;
+      color: #3D8EC9;
+      padding: 0.65rem 1.75rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      display: inline-block;
+      transition: background 0.2s, color 0.2s, transform 0.15s;
+    }
+    .btn-outline:hover  { background: #3D8EC9; color: white; transform: scale(1.02); }
+    .btn-outline:focus  { outline: none; box-shadow: 0 0 0 3px rgba(61,142,201,0.3); }
+    .btn-outline:active { transform: scale(0.98); }
+
+    .nav-link {
+      color: #374151;
+      font-weight: 500;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.375rem;
+      transition: color 0.15s, background 0.15s;
+    }
+    .nav-link:hover { color: #3D8EC9; background: #D0E9F7; }
+    .nav-link.active { color: #3D8EC9; font-weight: 700; }
+
+    .card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(61,142,201,0.1), 0 8px 32px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(61,142,201,0.2), 0 16px 40px rgba(0,0,0,0.08); }
+
+    .hero-gradient {
+      background: linear-gradient(135deg, #1a6ca8 0%, #3D8EC9 45%, #6BAED6 100%);
+    }
+
+    .section-divider { border-color: #D0E9F7; }
+
+    /* Mobile menu */
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="./brand_logo/logo.png" alt="하늘의 빛 교회 로고" class="h-10 w-auto object-contain">
+        <span class="text-xl font-black text-sky-brand tracking-tight">하늘의 빛 교회</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-1">
+        <a href="index.html"    class="nav-link active">메인</a>
+        <a href="about.html"   class="nav-link">교회소개</a>
+        <a href="worship.html" class="nav-link">예배안내</a>
+        <a href="board.html"   class="nav-link">게시판/앨범</a>
+      </nav>
+
+      <!-- Mobile Hamburger -->
+      <button id="menu-btn" class="md:hidden p-2 rounded-lg text-gray-500 hover:text-sky-brand hover:bg-sky-pale transition-colors" aria-label="메뉴 열기">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden bg-white border-t border-sky-pale px-4 pb-4">
+      <nav class="flex flex-col gap-1 pt-2">
+        <a href="index.html"    class="nav-link active">메인</a>
+        <a href="about.html"   class="nav-link">교회소개</a>
+        <a href="worship.html" class="nav-link">예배안내</a>
+        <a href="board.html"   class="nav-link">게시판/앨범</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-gradient text-white py-24 px-4 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+        <circle cx="600" cy="100" r="200" fill="white"/>
+        <circle cx="100" cy="300" r="150" fill="white"/>
+      </svg>
+    </div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <p class="text-sky-pale text-sm font-medium tracking-widest uppercase mb-4">Light of Heaven Church</p>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-6">
+        하늘의 빛으로<br>
+        <span class="text-yellow-200">함께하는 공동체</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto mb-10 leading-relaxed">
+        상처받은 영혼들을 치유하고 성숙하게 하는 곳,<br>
+        하나님의 임재와 은혜 안에서 기쁨으로 함께합니다.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="worship.html" class="btn-primary text-center">예배 안내 보기</a>
+        <a href="about.html"   class="btn-outline border-white text-white hover:bg-white hover:text-sky-brand text-center">교회 소개</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Worship Times Quick Info -->
+  <section class="bg-white py-12 px-4 border-b border-sky-pale">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-center text-2xl font-bold text-gray-700 mb-8">예배 시간 안내</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-xl mx-auto">
+        <div class="card p-6 text-center border-2 border-sky-brand">
+          <div class="w-12 h-12 rounded-full bg-sky-brand flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-lg text-gray-800 mb-1">주일 예배</h3>
+          <p class="text-sky-brand font-semibold text-xl">오전 11:00</p>
+          <p class="text-gray-500 text-sm mt-1">본당</p>
+        </div>
+        <div class="card p-6 text-center">
+          <div class="w-12 h-12 rounded-full bg-sky-pale flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-sky-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-lg text-gray-800 mb-1">수요 예배</h3>
+          <p class="text-sky-brand font-semibold text-xl">오후 7:30</p>
+          <p class="text-gray-500 text-sm mt-1">본당</p>
+        </div>
+      </div>
+      <p class="text-center mt-6">
+        <a href="worship.html" class="btn-outline">전체 예배 일정 보기</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Welcome Message -->
+  <section class="py-16 px-4 bg-sky-pale">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-10 items-center">
+      <div class="flex-shrink-0">
+        <img src="https://placehold.co/280x320/3D8EC9/ffffff?text=담임목사" alt="담임목사" class="rounded-2xl shadow-lg w-64 h-72 object-cover mx-auto">
+      </div>
+      <div>
+        <p class="text-sky-brand font-semibold text-sm tracking-widest uppercase mb-2">담임목사 인사말</p>
+        <h2 class="text-3xl font-black text-gray-800 mb-4">환영합니다</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          하늘의 빛 교회에 오신 것을 진심으로 환영합니다.<br>
+          저희 교회는 상처받은 영혼들을 치유하고 성숙하게 하는 것을 사명으로 삼고 있습니다.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          하나님의 임재와 은혜에 중심을 두고, 모든 분들이 기쁨과 평안을 누리는 공동체를 만들어 가고 있습니다.
+          함께 하나님의 사랑 안에서 성장해 나가시길 바랍니다.
+        </p>
+        <a href="about.html" class="btn-primary">목사님 소개 더 보기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Notices -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-bold text-gray-800">최근 공지사항</h2>
+        <a href="board.html" class="text-sky-brand hover:text-sky-deep font-medium text-sm transition-colors">전체 보기 →</a>
+      </div>
+      <div id="recent-notices" class="divide-y divide-sky-pale">
+        <div class="py-4 text-center text-gray-400 text-sm">불러오는 중...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery Preview -->
+  <section class="py-16 px-4 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-bold text-gray-800">사진 앨범</h2>
+        <a href="board.html#album" class="text-sky-brand hover:text-sky-deep font-medium text-sm transition-colors">전체 보기 →</a>
+      </div>
+      <div id="gallery-preview" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+        <div class="rounded-xl bg-sky-pale h-40 animate-pulse"></div>
+        <div class="rounded-xl bg-sky-pale h-40 animate-pulse"></div>
+        <div class="rounded-xl bg-sky-pale h-40 animate-pulse"></div>
+        <div class="rounded-xl bg-sky-pale h-40 animate-pulse"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location Banner -->
+  <section class="bg-sky-brand text-white py-12 px-4">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h3 class="text-xl font-bold mb-2">오시는 길</h3>
+        <p class="text-blue-100 text-sm leading-relaxed">
+          경기도 안양시 동안구 관악대로 72번지 동화빌딩 4F, 5F<br>
+          📞 031-457-2691
+        </p>
+      </div>
+      <a href="worship.html#location" class="btn-outline border-white text-white hover:bg-white hover:text-sky-brand flex-shrink-0">
+        지도 보기
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-10 px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-col md:flex-row gap-8 mb-8">
+        <div class="flex-1">
+          <div class="flex items-center gap-2 mb-3">
+            <img src="./brand_logo/logo.png" alt="로고" class="h-8 w-auto object-contain brightness-200">
+            <span class="text-white font-bold text-lg">하늘의 빛 교회</span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            상처받은 영혼들을 치유하고 성숙하게 하는<br>
+            기쁨의 공동체
+          </p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3 text-sm">바로가기</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html"    class="hover:text-sky-light transition-colors">메인</a></li>
+            <li><a href="about.html"   class="hover:text-sky-light transition-colors">교회소개</a></li>
+            <li><a href="worship.html" class="hover:text-sky-light transition-colors">예배안내</a></li>
+            <li><a href="board.html"   class="hover:text-sky-light transition-colors">게시판/앨범</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3 text-sm">연락처</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li>📞 031-457-2691</li>
+            <li>📍 경기도 안양시 동안구<br>관악대로 72번지 동화빌딩 4F, 5F</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-6 text-center text-xs text-gray-500">
+        © 2024 하늘의 빛 교회. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Detail Modal -->
+  <div id="detail-modal" role="dialog" aria-modal="true" style="display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;padding:1rem;">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl flex flex-col" style="max-height:80vh;">
+      <div class="flex items-start justify-between px-6 pt-6 pb-4 border-b border-gray-100">
+        <div class="flex-1 pr-4">
+          <span id="detail-badge" class="inline-block text-xs font-bold px-2 py-0.5 rounded mb-2"></span>
+          <h2 id="detail-title" class="text-xl font-bold text-gray-900 leading-snug"></h2>
+          <p id="detail-date" class="text-xs text-gray-400 mt-1"></p>
+        </div>
+        <button onclick="closeDetailModal()" class="text-gray-400 hover:text-gray-600 transition-colors focus:outline-none" aria-label="닫기">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="px-6 py-5 overflow-y-auto">
+        <img id="detail-image" src="" alt="" class="hidden w-full rounded-xl object-cover max-h-64 mb-4">
+        <p id="detail-content" style="white-space:pre-wrap;" class="text-gray-700 text-sm leading-relaxed"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Photo Modal -->
+  <div id="photo-modal" role="dialog" aria-modal="true" style="display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;padding:1rem;">
+    <div class="relative max-w-3xl w-full mx-4">
+      <button onclick="closePhotoModal()" class="absolute -top-10 right-0 text-white text-2xl font-bold hover:text-gray-300 focus:outline-none transition-colors" aria-label="닫기">✕</button>
+      <img id="modal-img" src="" alt="" class="w-full rounded-xl shadow-2xl">
+      <p id="modal-caption" class="text-white text-center mt-3 text-sm font-medium"></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('menu-btn').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    });
+  </script>
+
+  <script>
+    let API_BASE = '';
+    fetch('/config.json').then(r => r.json()).then(cfg => {
+      API_BASE = cfg.API_BASE;
+      loadRecentNotices();
+      loadGalleryPreview();
+    });
+
+    // Detail modal
+    async function openNoticeDetail(id) {
+      try {
+        const res = await fetch(`${API_BASE}/api/notices/${id}`);
+        const n = await res.json();
+        const badge = document.getElementById('detail-badge');
+        badge.textContent = n.is_pinned ? '고정' : '공지';
+        badge.className = `inline-block text-xs font-bold px-2 py-0.5 rounded mb-2 ${n.is_pinned ? 'bg-red-100 text-red-600' : 'bg-sky-pale text-sky-brand'}`;
+        document.getElementById('detail-title').textContent = n.title;
+        document.getElementById('detail-date').textContent = new Date(n.created_at).toLocaleDateString('ko-KR', {year:'numeric',month:'long',day:'numeric'});
+        document.getElementById('detail-image').classList.add('hidden');
+        document.getElementById('detail-content').textContent = n.content;
+        const modal = document.getElementById('detail-modal');
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      } catch { alert('불러올 수 없습니다'); }
+    }
+
+    function closeDetailModal() {
+      document.getElementById('detail-modal').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    function openPhotoModal(src, caption) {
+      document.getElementById('modal-img').src = src;
+      document.getElementById('modal-caption').textContent = caption;
+      const modal = document.getElementById('photo-modal');
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePhotoModal() {
+      document.getElementById('photo-modal').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('detail-modal').addEventListener('click', function(e) { if (e.target === this) closeDetailModal(); });
+    document.getElementById('photo-modal').addEventListener('click', function(e) { if (e.target === this) closePhotoModal(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeDetailModal(); closePhotoModal(); } });
+
+    async function loadRecentNotices() {
+      try {
+        const res = await fetch(`${API_BASE}/api/notices?limit=5`);
+        if (!res.ok) throw new Error();
+        const data = await res.json();
+        const container = document.getElementById('recent-notices');
+        if (!data.items.length) {
+          container.innerHTML = '<div class="py-8 text-center text-gray-400 text-sm">등록된 공지사항이 없습니다</div>';
+          return;
+        }
+        container.innerHTML = data.items.map(n => `
+          <div class="py-4 flex items-start gap-4 group cursor-pointer" onclick="openNoticeDetail(${n.id})">
+            <span class="flex-shrink-0 ${n.is_pinned ? 'bg-sky-pale text-sky-brand' : 'bg-gray-100 text-gray-500'} text-xs font-bold px-2 py-1 rounded">공지</span>
+            <div class="flex-1">
+              <p class="font-medium text-gray-800 group-hover:text-sky-brand transition-colors">${n.title}</p>
+              <p class="text-gray-400 text-sm mt-0.5">${new Date(n.created_at).toLocaleDateString('ko-KR')}</p>
+            </div>
+          </div>
+        `).join('');
+      } catch {
+        document.getElementById('recent-notices').innerHTML = '<div class="py-4 text-center text-gray-400 text-sm">불러올 수 없습니다</div>';
+      }
+    }
+
+    async function loadGalleryPreview() {
+      try {
+        const res = await fetch(`${API_BASE}/api/gallery?limit=4`);
+        if (!res.ok) throw new Error();
+        const data = await res.json();
+        const container = document.getElementById('gallery-preview');
+        if (!data.length) {
+          container.innerHTML = '<p class="col-span-4 text-center text-gray-400 text-sm py-8">등록된 사진이 없습니다</p>';
+          return;
+        }
+        container.innerHTML = data.slice(0, 4).map(g => `
+          <img src="${API_BASE}${g.image_url}" alt="${g.title}" class="rounded-xl object-cover w-full h-40 hover:opacity-90 transition-opacity cursor-pointer" onclick="openPhotoModal('${API_BASE}${g.image_url}', '${g.title}')">
+        `).join('');
+      } catch {
+        document.getElementById('gallery-preview').innerHTML = `
+          <img src="https://placehold.co/300x200/6BAED6/ffffff?text=예배" class="rounded-xl object-cover w-full h-40">
+          <img src="https://placehold.co/300x200/3D8EC9/ffffff?text=행사" class="rounded-xl object-cover w-full h-40">
+          <img src="https://placehold.co/300x200/2B6E9E/ffffff?text=수련회" class="rounded-xl object-cover w-full h-40">
+          <img src="https://placehold.co/300x200/5899C8/ffffff?text=봉사" class="rounded-xl object-cover w-full h-40">
+        `;
+      }
+    }
+
+  </script>
+</body>
+</html>
